@@ -1,0 +1,34 @@
+{
+    "personnages": [
+        {
+            "id": "1",
+            "nom": "Yulan",
+            "sexe": "Homme",
+            "motivation": "Je veux devenir le plus grand des pirates !",
+            "personnalite": "Je suis un homme qui aime la bagarre et l'alcool !",
+            "taille": 190,
+            "poids": 72,
+            "age": 18
+        },
+        {
+            "id": "1375",
+            "nom": "caca",
+            "sexe": "homme",
+            "motivation": "caca",
+            "personnalite": "caca",
+            "taille": 12,
+            "poids": 12,
+            "age": 12
+        },
+        {
+            "id": "2689",
+            "nom": "coco",
+            "sexe": "homme",
+            "motivation": "caca",
+            "personnalite": "gay",
+            "taille": 190,
+            "poids": 85,
+            "age": 20
+        }
+    ]
+}
