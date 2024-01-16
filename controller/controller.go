@@ -84,5 +84,12 @@ func Accueil(w http.ResponseWriter, r *http.Request) {
 }
 
 func Profil(w http.ResponseWriter, r *http.Request) {
-	templates.Temp.ExecuteTemplate(w, "profil", nil)
+    file, erreurFile := ioutil.ReadFile("./perso.json")
+    if erreurFile != nil {
+        fmt.Println(erreurFile)
+    }
+    var ListePersonnages backend.Personnages
+
+    json.Unmarshal(file, &ListePersonnages)
+	templates.Temp.ExecuteTemplate(w, "profil", ListePersonnages)
 }

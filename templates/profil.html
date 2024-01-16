@@ -6,11 +6,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/static/css/profil.css">
 </head>
 
 <body>
-    <h1>Page de profil</h1>
+    <div class="txt">
+        <h1s>Aventurier</h1>
+    </div>
+    {{ range .PersonnagesData }}
+    <div class="perso-content">
+        <div class="first-content">
+            <h1>{{ .Nom }}</h1>
+            <p>Sexe : {{ .Sexe }}</p>
+        </div>
+        <div class="first-content">
+            <p>Motivation : {{ .Motivation }}</p>
+            <p>Personnalité : {{ .Personnalite }}</p>
+        </div>
+        <div class="first-content">
+            <p>Taille : {{ .Taille }}</p>
+            <p>Poids : {{ .Poids }}</p>
+            <p>Age : {{ .Age }}</p>
+        </div>
+    </div>
+
+    {{end}}
     <a href="/accueil">accueil</a>
+
 </body>
 
 </html>

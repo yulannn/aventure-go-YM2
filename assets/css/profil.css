@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'Pirate';
+    src: url('/static/css/police.ttf');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+body {
+    font-family: 'Pirate', cursive;
+    color: white;
+    background-image: url(http://localhost:8081/static/images/profil.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.txt {
+    text-align: center;
+}
+
+
+
+
+.perso-content {
+    background-image: url(http://localhost:8081/static/images/wooden.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid gray;
+    margin-top: 1.5rem;
+    border-radius: 20px;
+    height: 20vh;
+    width: 60vw;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.perso-content:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.first-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
