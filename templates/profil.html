@@ -11,8 +11,9 @@
 
 <body>
     <div class="txt">
-        <h1s>Aventurier</h1>
+        <h1>Aventurier</h1>
     </div>
+
     {{ range .PersonnagesData }}
     <div class="perso-content">
         <div class="first-content">
@@ -28,11 +29,18 @@
             <p>Poids : {{ .Poids }}</p>
             <p>Age : {{ .Age }}</p>
         </div>
+        <div>
+            <form action="/supprimer" method="POST">
+                <input type="hidden" name="id" value="{{.ID}}">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
     </div>
+    {{ end }}
 
-    {{end}}
-    <a href="/accueil">accueil</a>
-
+    <div class="space">
+        <a href="/accueil">accueil</a>
+    </div>
 </body>
 
 </html>

@@ -12,6 +12,57 @@ import (
 	"io/ioutil"
 )
 
+func SupprimerPersonnage(w http.ResponseWriter, r *http.Request) {
+    if r.Method != "POST" {
+        http.Error(w, "Méthode non autorisée", http.StatusMethodNotAllowed)
+        return
+    }
+
+    err := r.ParseForm()
+    if err != nil {
+        http.Error(w, "Erreur lors de l'analyse du formulaire", http.StatusInternalServerError)
+        return
+    }
+
+    idASupprimer := r.FormValue("id")
+
+    var personnages backend.Personnages
+    data, err := ioutil.ReadFile("./perso.json")
+    if err != nil {
+        http.Error(w, "Erreur lors de la lecture du fichier", http.StatusInternalServerError)
+        return
+    }
+
+    err = json.Unmarshal(data, &personnages)
+    if err != nil {
+        http.Error(w, "Erreur lors du décodage du JSON", http.StatusInternalServerError)
+        return
+    }
+
+    for i, personnage := range personnages.PersonnagesData {
+        if personnage.ID == idASupprimer {
+            personnages.PersonnagesData = append(personnages.PersonnagesData[:i], personnages.PersonnagesData[i+1:]...)
+            break
+        }
+    }
+
+    dataWrite, err := json.Marshal(personnages)
+    if err != nil {
+        http.Error(w, "Erreur lors de la sérialisation du JSON", http.StatusInternalServerError)
+        return
+    }
+
+    err = ioutil.WriteFile("./perso.json", dataWrite, 0644)
+    if err != nil {
+        http.Error(w, "Erreur lors de l'écriture du fichier", http.StatusInternalServerError)
+        return
+    }
+
+    http.Redirect(w, r, "/profil", http.StatusSeeOther)
+}
+
+
+
 func FormSubmission(w http.ResponseWriter, r *http.Request) {
 
     nomFichier := "perso.json"

@@ -16,6 +16,8 @@ func Initserv() {
 	http.HandleFunc("/accueil", controller.Accueil)
 	http.HandleFunc("/profil", controller.Profil)
 	http.HandleFunc("/treatment", controller.FormSubmission)
+	http.HandleFunc("/supprimer", controller.SupprimerPersonnage)
+
 
 
 	fmt.Println("Serveur lancé sur le port 8080")
