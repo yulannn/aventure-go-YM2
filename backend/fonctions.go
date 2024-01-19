@@ -13,7 +13,6 @@ import (
 func PersoLoad() ([]Personnage, error) {
     fileData, err := os.ReadFile("perso.json")
     if err != nil {
-
         return nil, err
     }
 

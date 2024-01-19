@@ -14,8 +14,12 @@
         <h1>Aventurier</h1>
     </div>
 
+
     {{ range .PersonnagesData }}
     <div class="perso-content">
+        <div class="first-content">
+            <a id="edit" href="modifier-personnage-action?id={{ .ID }}">Modifier</a>
+        </div>
         <div class="first-content">
             <h1>{{ .Nom }}</h1>
             <p>Sexe : {{ .Sexe }}</p>
@@ -29,13 +33,14 @@
             <p>Poids : {{ .Poids }}</p>
             <p>Age : {{ .Age }}</p>
         </div>
-        <div>
-            <form action="/supprimer" method="POST">
-                <input type="hidden" name="id" value="{{.ID}}">
-                <button type="submit">Delete</button>
-            </form>
-        </div>
+        <form action="/supprimer" method="POST">
+            <input type="hidden" name="id" value="{{.ID}}">
+            <div class="btn-box">
+                <button id="delete" type="submit">Delete</button>
+            </div>
+        </form>
     </div>
+
     {{ end }}
 
     <div class="space">

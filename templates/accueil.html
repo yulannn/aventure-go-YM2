@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <a href="/profil">profil</a>
+    <a id="perso" href="/profil">Aventurier</a>
 
     <form action="/treatment" method="post">
         <div class="txt">
@@ -19,7 +19,7 @@
                 <div class="content">
                     <div class="form-group">
                         <label for="nom">Nom :</label>
-                        <input name="nom" type="text" maxlength="20">
+                        <input name="nom" type="text" maxlength="20" required>
                     </div>
 
                     <div class="form-group">
@@ -32,27 +32,27 @@
 
                     <div class="form-group">
                         <label for="motivation">Motivation :</label>
-                        <input class="big" type="text" name="motivation" maxlength="60">
+                        <input class="big" type="text" name="motivation" maxlength="60" required>
                     </div>
 
                     <div class="form-group">
                         <label for="personnalite">Personnalité :</label>
-                        <input class="big" type="text" name="personnalite" maxlength="60">
+                        <input class="big" type="text" name="personnalite" maxlength="60" required>
                     </div>
 
                     <div class="form-group">
                         <label for="taille">Taille (cm):</label>
-                        <input type="text" name="taille" maxlength="3">
+                        <input type="number" name="taille" maxlength="3" pattern="[0-9]*" required>
                     </div>
 
                     <div class="form-group">
                         <label for="poids">Poids (kg):</label>
-                        <input type="text" name="poids" maxlength="3">
+                        <input type="number" name="poids" maxlength="3" pattern="[0-9]*" required>
                     </div>
 
                     <div class="form-group">
                         <label for="age">Age :</label>
-                        <input type="text" name="age" maxlength="3">
+                        <input type="number" name="age" maxlength="3" pattern="[0-9]*" required>
                     </div>
 
                     <input id="btn" type="submit" value="Envoyer">

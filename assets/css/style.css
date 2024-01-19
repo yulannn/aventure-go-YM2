@@ -19,6 +19,22 @@ body {
     height: 100vh;
 }
 
+#perso {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+}
+
+#perso:hover {
+    transform: scale(1.1);
+    letter-spacing: 0.1rem;
+}
+
 .txt {
     text-align: center;
 }
@@ -98,6 +114,22 @@ input {
         margin-top: 0.25rem;
         width: 4rem;
         height: 1.5rem;
+    }
+
+    #perso {
+        position: absolute;
+        top: 2%;
+        right: 2%;
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        padding: 0.25rem 1rem;
+        border-radius: 10px;
+        font-size: 0.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
     }
 }
 

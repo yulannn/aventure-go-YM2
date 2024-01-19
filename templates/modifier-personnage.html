@@ -1,0 +1,67 @@
+{{ define "modifier-personnage" }}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier Personnage</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="txt">
+        <h1>Modifier Personnage</h1>
+    </div>
+
+    <form action="/modifier-personnage-action-treatment" method="POST">
+        <input type="hidden" name="id" value="{{.ID}}">
+        <div class="container">
+            <div class="content">
+                <div class="form-group">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" value="{{.Nom}}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sexe">Sexe :</label>
+                    <input type="text" id="sexe" name="sexe" value="{{.Sexe}}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="motivation">Motivation :</label>
+                    <input type="text" id="motivation" name="motivation" value="{{.Motivation}}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="personnalite">Personnalité :</label>
+                    <input type="text" id="personnalite" name="personnalite" value="{{.Personnalite}}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="taille">Taille :</label>
+                    <input type="number" id="taille" name="taille" value="{{.Taille}}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="poids">Poids :</label>
+                    <input type="number" id="poids" name="poids" value="{{.Poids}}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Âge :</label>
+                    <input type="number" id="age" name="age" value="{{.Age}}" required>
+                </div>
+
+                <button type="submit">Enregistrer</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="space">
+        <a href="/profil">Retour au Profil</a>
+    </div>
+</body>
+
+</html>
+{{ end }}
